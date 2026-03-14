@@ -1,0 +1,5 @@
+{"id": "00000000-0000-0000-0000-000000000001", "payload": {"message": "send_email", "for_who": "boltozviak@outlook.com"}}
+{"id": "00000000-0000-0000-0000-000000000002", "payload": {"message": "resize_image", "path": "/memes/azaza.jpg"}}
+{"id": "00000000-0000-0000-0000-000000000003", "payload": {"message": "send_notification", "user_id": 52}}
+
+
