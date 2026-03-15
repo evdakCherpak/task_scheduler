@@ -18,7 +18,9 @@ class SRCRegistry:
 
     def get(self, source: str, **kwargs):
         if source not in self._registry:
+            main_logger.error(f"Запрос неизвестного источника: {source}")
             raise KeyError(f"Источник {source} не найден")
+        main_logger.debug(f"Получение источника {source} с параметрами {kwargs}")
         return self._registry[source](**kwargs)
 
     def __contains__(self, source: str):

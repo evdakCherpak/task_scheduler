@@ -3,7 +3,8 @@ import datetime
 from pathlib import Path
 
 cur_date = datetime.datetime.now().date()
-LOG_DIR = Path(__file__).resolve().parents[2]
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+LOG_DIR = PROJECT_ROOT / "logs"
 os.makedirs(LOG_DIR, exist_ok=True)
 LOG_FILE = LOG_DIR / f"scheduler-{cur_date}.log"
 

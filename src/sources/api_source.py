@@ -1,6 +1,7 @@
 from uuid import UUID
 from typing import Iterator
 from src.models.task import Task
+from src.utils.logger import main_logger
 
 
 class APITaskSource:
@@ -13,7 +14,7 @@ class APITaskSource:
     }
 
     def put_tasks(self) -> Iterator[Task]:
+        main_logger.debug("APITaskSource: загрузка задач из API")
         data = self.FAKE_DATA
-
         for line in data["tasks"]:
             yield Task(id=UUID(line["id"]), payload=line["payload"])
