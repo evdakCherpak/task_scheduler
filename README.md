@@ -33,3 +33,6 @@ uv run pytest tests/ --cov=src
 
 Тесты в `tests/unit/`: модель задачи, протокол, реестр, планировщик, источники (файл, генератор, API), CLI; фикстуры в `conftest.py`.
 
+## TODO
+
+Изменить архитектуру на ту, что у Савелия (Adapters, Controllers, Models, Service)
