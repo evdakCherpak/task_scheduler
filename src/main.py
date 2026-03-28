@@ -1,7 +1,7 @@
-from src.core.cli import CLI
+from src.delivery.cli import CLI
 from src.sources.registry import SRCRegistry
-from src.sources.setup_registry import registry_setup   
-from src.core.scheduler import Scheduler
+from src.sources.setup_registry import registry_setup
+from src.app.scheduler import Scheduler
 from src.utils.logger import main_logger
 
 def main() -> None:

@@ -1,5 +1,5 @@
 import pytest
-from src.core.scheduler import Scheduler
+from src.app.scheduler import Scheduler
 from src.models.task import Task
 
 class WithoutPutTasks:

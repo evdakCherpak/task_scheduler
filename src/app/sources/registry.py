@@ -25,6 +25,6 @@ class SRCRegistry:
 
     def __contains__(self, source: str):
         return source in self._registry
-    
+
     def __iter__(self) -> Iterator[str]:
         return iter(self._registry)

@@ -14,6 +14,6 @@ class GenTaskSource:
 
     def put_tasks(self) -> Iterator[Task]:
         main_logger.debug(f"Генерация {self.count} задач")
-        
+
         for i in range(self.count):
             yield Task(id=uuid.uuid4(), payload={"message": self.message, "number": i})

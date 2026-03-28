@@ -27,5 +27,3 @@ class FileTaskSource:
                 yield Task(id=UUID(data["id"]), payload=data["payload"])
                 count += 1
         main_logger.debug(f"FileTaskSource: загружено {count} задач из {self.filepath}")
-
-

@@ -1,4 +1,4 @@
-from src.core.scheduler import Scheduler
+from src.app.scheduler import Scheduler
 from src.utils.logger import main_logger
 
 class CLI:
