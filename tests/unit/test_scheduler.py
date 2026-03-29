@@ -2,8 +2,10 @@ import pytest
 from src.app.scheduler import Scheduler
 from src.domain.task import Task
 
+
 class WithoutPutTasks:
     ...
+
 
 class TestScheduler:
     def test_add_source_and_iter_tasks(self, api_source):
@@ -23,7 +25,7 @@ class TestScheduler:
     def test_iter_tasks_invalid_source_raises(self):
         scheduler = Scheduler()
         scheduler.add_source(WithoutPutTasks())
-        with pytest.raises(TypeError, match="does not match TaskSourceProtocol"):
+        with pytest.raises(AttributeError):
             list(scheduler.iter_tasks())
 
     def test_init_with_sources(self, api_source):

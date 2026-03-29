@@ -15,6 +15,3 @@ class InvalidTaskTypeError(TaskError):
 
 class InvalidPayloadError(TaskError):
     ...
-
-class TaskCreateError(TaskError):
-    ...
