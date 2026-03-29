@@ -1,6 +1,7 @@
+from collections.abc import Iterator
 from typing import Protocol, runtime_checkable
-from src.models.task import Task
-from typing import Iterator
+
+from src.domain.task import Task
 
 
 @runtime_checkable

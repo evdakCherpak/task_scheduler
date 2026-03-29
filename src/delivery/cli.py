@@ -1,5 +1,5 @@
 from src.app.scheduler import Scheduler
-from src.utils.logger import main_logger
+from src.infra.logger import main_logger
 
 class CLI:
     def __init__(self, scheduler: Scheduler) -> None:

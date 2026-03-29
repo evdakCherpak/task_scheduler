@@ -1,8 +1,8 @@
-from typing import Callable, Iterator
-from src.models.source_protocol import TaskSourceProtocol
-from src.utils.logger import main_logger
+from typing import Type, Iterator
+from src.domain.source_protocol import TaskSourceProtocol
+from src.infra.logger import main_logger
 
-SourceFactory = Callable[..., TaskSourceProtocol]
+SourceFactory = Type[TaskSourceProtocol]
 
 class SRCRegistry:
     def __init__(self) -> None:

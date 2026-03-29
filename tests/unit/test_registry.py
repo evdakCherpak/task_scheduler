@@ -1,7 +1,7 @@
 import pytest
-from src.sources.api_source import APITaskSource
-from src.sources.file_source import FileTaskSource
-from src.sources.gen_source import GenTaskSource
+from src.app.sources.api_source import APITaskSource
+from src.app.sources.file_source import FileTaskSource
+from src.app.sources.gen_source import GenTaskSource
 
 
 class TestSRCRegistry:

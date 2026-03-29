@@ -1,6 +1,6 @@
 import pytest
 from src.app.scheduler import Scheduler
-from src.models.task import Task
+from src.domain.task import Task
 
 class WithoutPutTasks:
     ...

@@ -1,20 +1,34 @@
-from uuid import UUID
 from typing import Iterator
-from src.models.task import Task
-from src.utils.logger import main_logger
+
+from src.domain.task import Task
+from src.infra.logger import main_logger
 
 
 class APITaskSource:
     FAKE_DATA: dict = {
         "tasks": [
-            {"id": "00000000-0000-0000-0000-000000000004", "payload": {"type": "send_notification", "user_id": 42}},
-            {"id": "00000000-0000-0000-0000-000000000005", "payload": {"type": "recalc_stats", "period": "2024-Q1"}},
-            {"id": "00000000-0000-0000-0000-000000000006", "payload": {"type": "send_email", "to": "boltozviak@outlook.com"}},
+            {
+                "task_type": "send_notification",
+                "description": "Отправить push-уведомление пользователю",
+                "priority": 6,
+                "payload": {"user_id": 42, "message": "Ваш заказ обрабатывается"},
+            },
+            {
+                "task_type": "recalc_stats",
+                "description": "Пересчитать статистику за период",
+                "priority": 4,
+                "payload": {"period": "2024-Q1"},
+            },
+            {
+                "task_type": "send_email",
+                "description": "Отправить письмо пользователю",
+                "priority": 8,
+                "payload": {"to": "boltozviak@outlook.com", "subject": "Ваш отчёт готов"},
+            },
         ]
     }
 
     def put_tasks(self) -> Iterator[Task]:
         main_logger.debug("APITaskSource: загрузка задач из API")
-        data = self.FAKE_DATA
-        for line in data["tasks"]:
-            yield Task(id=UUID(line["id"]), payload=line["payload"])
+        for item in self.FAKE_DATA["tasks"]:
+            yield Task.from_dict(item)

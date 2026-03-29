@@ -15,5 +15,5 @@ dependencies = [
 pythonpath = ["."]
 
 [tool.mypy]
-python_version = "3.13.7"
+python_version = "3.13"
 ignore_missing_imports = true

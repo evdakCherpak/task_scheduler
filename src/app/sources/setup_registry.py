@@ -1,8 +1,8 @@
-from src.sources.registry import SRCRegistry
-from src.sources.api_source import APITaskSource
-from src.sources.file_source import FileTaskSource
-from src.sources.gen_source import GenTaskSource
-from src.utils.logger import main_logger
+from src.app.sources.registry import SRCRegistry
+from src.app.sources.api_source import APITaskSource
+from src.app.sources.file_source import FileTaskSource
+from src.app.sources.gen_source import GenTaskSource
+from src.infra.logger import main_logger
 
 def registry_setup() -> SRCRegistry:
     main_logger.debug("Инициализация реестра источников задач")

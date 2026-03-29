@@ -1,9 +1,8 @@
 import pytest
 from uuid import UUID
-from src.models.task import Task
-from src.sources.file_source import FileTaskSource
-from src.sources.api_source import APITaskSource
-from src.sources.gen_source import GenTaskSource
+from src.domain.task import Task
+from src.app.sources.file_source import FileTaskSource
+from src.app.sources.gen_source import GenTaskSource
 
 
 class TestFileTaskSource:
