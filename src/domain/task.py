@@ -3,6 +3,7 @@ from enum import Enum
 from typing import Any
 from uuid import UUID, uuid4
 from src.domain.task_descriptors import STANDARD_PRIORITY
+from src.infra.logger import main_logger
 
 from src.domain.exceptions import InvalidStatusError
 from src.domain.task_descriptors import (
@@ -53,6 +54,7 @@ class Task:
         if not isinstance(value, TaskStatus):
             raise InvalidStatusError("Задан некорректный статус")
         self._status = value
+        main_logger.info(f"Статус задачи изменен на {value}")
 
 
     @property
